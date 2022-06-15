@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    display: flex;
+    position: relative;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+section {
+    width: 100%;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.posts {
+    width: calc(100vw - 240px);
+    margin: 100px 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    display: flex;
+    margin-top: 20px;
+    transition: .2s;
+    background: #f3f2f2;
+    border-radius: 8px;
+}
+
+.post:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+}
+
+.post p, .post h3 {
+    margin: 15px;
+    height: 20px;
+}
+
+.post h3 {
+    width: 10%;
+}
+
+.post p {
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.delete {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    margin: auto;
+    transition: .2s;
+}
+
+.delete:hover {
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+.delete span {
+    margin: auto;
+}
+
+.add {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    transition: .2s;
+    border-radius: 50%;
+    background: rgba(227, 227, 227, 0.37);
+}
+
+.add p {
+    margin: auto;
+    font-size: 40px;
+}
+
+.add:hover {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    top: 0;
+    display: none;
+    left: 0;
+}
+
+.modal_block {
+    width: 40%;
+    height: 40%;
+    position: relative;
+    margin: auto;
+    flex-direction: column;
+    background: white;
+    padding: 30px;
+    display: flex;
+    border-radius: 20px;
+}
+
+.modal_closed {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: .2s;
+    border-radius: 50%;
+    background: #efefef;
+    display: flex;
+}
+
+.modal_closed span {
+    margin: auto;
+}
+
+.modal_closed:hover {
+    box-shadow: 0 0 0 2px black inset, 0 0 0 4px white inset;
+    cursor: pointer;
+}
+
+.modal_block input, .modal_block button {
+    height: 40px;
+    border-radius: 8px;
+    outline: none;
+    border: 0;
+    border-bottom: 1px black solid;
+}
+
+.modal_block form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 60%;
+    margin: auto;
+    width: 100%;
+}
+
+.modal_block input {
+    padding-left: 10px;
+}
+
+.modal_block button {
+    border: 0;
+    transition: .2s;
+}
+
+.modal_block button:hover {
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: #fff;
+    display: flex;
+}
+
+.loader {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    border: 10px solid orange;
+    border-top-color: #002147;
+    box-sizing: border-box;
+    background: transparent;
+    animation: loading 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    0% {
+        transform: rotate(360deg);
+    }
+}
+
+.letter_back {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    z-index: 3;
+    display: none;
+}
+.letter{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    margin: auto;
+    overflow-y: scroll;
+}
+.closed{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    border-radius: 50%;
+    display: flex;
+}
+.closed span{
+    margin: auto;
+}
+.closed:hover{
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
