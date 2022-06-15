@@ -77,7 +77,10 @@ const root = () => {
         remove.className = 'delete'
         post.className = 'post'
         remove.addEventListener('click', (e) => {
-            data.shift(i)
+            let item = data.indexOf(data[i]);
+            if (item !== -1) {
+                data.splice(item, 1);
+            }
             e.stopPropagation()
             localStorage.setItem('data', JSON.stringify(data))
             root()
